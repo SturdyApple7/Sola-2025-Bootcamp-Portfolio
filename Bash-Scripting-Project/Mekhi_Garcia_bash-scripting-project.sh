@@ -14,15 +14,15 @@ uptime=$(uptime -p)
 kernel_version=$(uname -r)
 
 #display the current user hostname 
-    echo "Current user hostname is: $hostname"
+echo "Current user hostname is: $hostname"
 #display additional system info 
-    echo "Gathering additional user and host info: $host_name"
+echo "Gathering additional user and host info: $host_name"
 #display the user ip address and extract using awk
-    echo "ip address of user is: $ip_address"
+echo "ip address of user is: $ip_address"
 #display the  uptime of the system
-    echo "the system uptime is: $uptime"
+echo "the system uptime is: $uptime"
 #display the Kernel version of the system
-    echo "the system kernel version is: $kernel_version"
+echo "the system kernel version is: $kernel_version"
 
 #set disk usage threshold
   threshold=90
@@ -37,15 +37,18 @@ if [ "$disk_usage" -ge "$threshold" ]; then
 else
    echo "storage health optimal"
 fi
+
 #logged on user and no pw users section 
-current_users=$(who -u)
-no_pwusers=$(sudo cat /etc/shadow | grep "!") 
-    echo "Users currently logged on: $current_users"
-    echo "Current audit on empty passwords: $no_pwusers" 
-#top memory consumers
+current_users=$(who)
+no_pwusers=$(cat /etc/shadow | grep "!") 
+echo "Users currently logged on: $current_users"
+
+
+
+#top memory consumersr
 top_mem=$(ps aux --sort rss | head -11)
 top_mem1=$(top)
+
 #display top memory consumers
-    echo "The current top memory use is: $top_mem"
-    echo "the top memory usage is $top_mem1"
-    
+echo "The current top memory use is: $top_mem"
+echo "the top memory usage is $top_mem1"

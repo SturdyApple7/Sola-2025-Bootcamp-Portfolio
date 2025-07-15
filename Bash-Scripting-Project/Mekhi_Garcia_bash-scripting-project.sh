@@ -1,7 +1,10 @@
 #Mekhi Garcia date: 07/14/2025
 #!/bin/bash 
+timestamp=$(date | awk '{print $2 " " $3 " " $4" " $7}')
+reportfile="$HOME/Desktop/report_$timestamp.txt"
 
-#set variables 
+{
+# set variables 
 hostname=$(hostname)
 host_name=$(hostnamectl)
 ip_address=$(hostname -I | awk '{print $1}')
@@ -56,3 +59,18 @@ echo "$audit_stat"
 echo "$cron_stat"
 echo "$ufw_stat"
 echo "Status Check Completed"
+
+#set location for parsing recent authentication logs 
+failed_passwd=$(sudo grep "Failed password" /var/log/auth.log)
+failed_passwdcount=$(sudo grep "Failed password" /var/log/auth.log | wc -l)
+
+#display the failed attempts 
+echo "Displaying failed password attempts: $failed_passwd" 
+echo "Failed attemps count: $failed_passwdcount"
+#generate audit report of failed logins
+failed_login=$(sudo aureport -au -i --failed)
+echo "Failed Authentication: $failed_login"
+echo "Authentication check completed"
+echo "end of script"
+
+} | tee $reportfile

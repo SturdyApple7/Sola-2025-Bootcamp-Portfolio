@@ -5,13 +5,13 @@
 $csvPath = "$HOME\Documents\Powershell-Scripts\Prohibited-applications.csv"
 
 # Step 1: Verify the csv Exist 
-if (-Not ( Test-path -path $csvpath)) {
-    Write-Host "CSV file not found at $csvpath"
+if (-Not (Test-Path -Path $csvpath)) {
+    Write-Host "CSV file does not exist at $csvpath"
     exit 1
 }
 
 # Step 2: import the csv file
-$Prohibitedapps = Import-Csv -path $csvpath 
+$Prohibitedapps = Import-Csv -Path $csvpath 
 
 # Step 3: loop through each enty in the app list
 foreach ($app in $Prohibitedapps) {
@@ -29,14 +29,14 @@ $chocoList = Choco list --local-only | Select-String -Pattern "^$displayName"
 if ($chocoList) { 
     # Step 5: try to uninstall via Chocolatey if found
     try {
-        Write-Host "Starting Uninstall of $displayName using Chocolatey..."
+        Write-Host "Initializing app removal of $displayName using Chocolatey..."
         choco uninstall $displayName -y
         Write-Host "The uninstall of $displayName was successfully done using Chocolatey."
     } catch { 
         Write-Host "Failed to Uninstall $displayName using Chocolatey. Error: $_"
     }
 } else {
-    # Step 6 if error using Chocolatey check using Get-Package 
+    # Step 6: if error using Chocolatey check using Get-Package 
     Write-Host "$displayName is not installed using Chocolatey. analyzing other installed packages..."
 
     $installed = Get-Package | Where-Object {

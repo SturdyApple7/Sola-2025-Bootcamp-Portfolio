@@ -2,15 +2,148 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8"
-<meta name=" viewport" content="width=device-width, initial scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<Title>AlchemicTech.com</title>
+  <title>AlchemicTech | IT Support & Computer Services</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1> welcome to AlchemicTech inc created 9/15/2026 </h1>
-    <p> thiss is my first website from scratch made from HTML.</p>
+  <!--navigation-->
+  <header>
+    <nav>
+      <h2>AlchemicTech</h2>
 
-<body>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Introduction-->
+  <main>
+
+    <section class="hero">
+      <h1>Welcome to AlchemicTech inc.</h1>
+
+      <p>
+        Here for Professional IT support, computer troubleshooting,
+        and technology solutions and service Needs Since 9/15/2026
+      </p>
+
+      <p>
+        Helping individuals and small business solve everyday technology problems.
+      </p>
+
+      <a class="button" href="services.html">
+        Request a Service
+      </a>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills">
+
+      <h2>My Skills</h2>
+
+      <div class="skill-list">
+
+        <div class="skill">
+          <h3>Computer Troubleshooting</h3>
+          <p>
+            Diagnose and troubleshoot hardware, software, operating system,
+            and connectivity problems.
+          </p>
+        </div>
+
+        <div class="skill">
+          <h3> Windows Support</h3>
+          <p>
+            Windows Installation, configuration
+            troubleshooting, user accounts, and system administration.
+          </p>
+        </div>
+
+        <div class="skill">
+          <h3>Networking</h3>
+          <p>
+            Basic Network troubleshooting, Wi-Fi, TCP/IP fundamentals,
+            routers, and connectivity.
+          </p>
+        </div>
+
+        <div class="skill">
+          <h3>Cybersecurity</h3>
+          <p>
+            Security fundamentals, account security, system hardening,
+            security policies, and troubleshooting security related issues.
+          </p>
+        </div>
+
+        <div class="skill">
+          <h3>Remote Support</h3>
+          <p>
+            Providing remote assistance for software,
+            configuration, troubleshooting, and technical support.
+          </p>
+        </div>
+
+        <div class="skill">
+          <h3>PowerShell & Bash</h3>
+          <p>
+            Basic Scripting and command line tools for
+            system administration and troubleshooting.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Achievements-->
+    <section class="achievements">
+
+      <h2>Achievements</h2>
+
+      <ul>
+        <li>Sola Foundation Cybersecurity Program</li>
+        <li>AOT Web development Program</li>
+        <li>Helped Manage Blessed Love Entertainment for 5+ years</li>
+        <li> CompTIA Security+ Certified</li>
+        <li>previous Brand ambassador for Apex solutions Marketing</li>
+        <li>Windows Administration Training</li>
+        <li>Linux Administration Training</li>
+        <li>Hands on Cybersecurity laboratory experience </li>
+        <li>Computer Hardware Assebmly & Troubleshooting</li>
+        <li>IT Support and technical troubleshooting experience</li>
+      </ul>
+
+    </section>
+
+    <!-- How may we help?-->
+    <section class="how-may-we-help">
+
+      <h2>Need Help with your device?</h2>
+
+      <p>
+        Get in touch to discuss your Technology needs
+        or a request service.
+      </p>
+
+      <a class="button" href="contact.html">
+        Contact AlchemicTech
+      </a>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 AlchemicTech. All rights reserved.</p>
+  </footer>
+
+</body>
+
 </html>
